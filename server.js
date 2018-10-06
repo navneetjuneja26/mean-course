@@ -1,3 +1,5 @@
+console.log('Node server starting...');
+
 const http = require('http');
 
 const server = http.createServer((req, res) => {
