@@ -6,7 +6,12 @@ const Post = require('./models/post');
 
 const app = express();
 
-mongoose.connect('mongodb+srv://van:TjuxG7saov4i8oRL@cluster0-8qlwj.mongodb.net/test?retryWrites=true')
+mongoose
+  .connect(
+    'mongodb+srv://van:' +
+    process.env.MONGO_ATLAS_PW +
+    '@cluster0-8qlwj.mongodb.net/test?retryWrites=true'
+  )
   .then(() => {
     console.log('Connected to database!');
   })
