@@ -10,7 +10,7 @@ mongoose
   .connect(
     'mongodb+srv://van:' +
     process.env.MONGO_ATLAS_PW +
-    '@cluster0-8qlwj.mongodb.net/test?retryWrites=true'
+    '@cluster0-8qlwj.mongodb.net/node-angular?retryWrites=true'
   )
   .then(() => {
     console.log('Connected to database!');
@@ -39,7 +39,7 @@ app.post('/api/posts', (req, res, next) => {
     title: req.body.title,
     content: req.body.content
   });
-  console.log(post);
+  post.save();
   res.status(201).json({
     message: 'Post added sucessfully'
   });
