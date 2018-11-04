@@ -7,11 +7,7 @@ const Post = require('./models/post');
 const app = express();
 
 mongoose
-  .connect(
-    'mongodb+srv://van:' +
-    process.env.MONGO_ATLAS_PW +
-    '@cluster0-8qlwj.mongodb.net/node-angular?retryWrites=true'
-  )
+  .connect(process.env.MONGO_CONN)
   .then(() => {
     console.log('Connected to database!');
   })
